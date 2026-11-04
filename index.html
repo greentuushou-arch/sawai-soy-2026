@@ -36,10 +36,7 @@ a{color:inherit;text-decoration:none}
 .fv-img::after{content:"";position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(transparent,var(--paper))}
 @keyframes fvzoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 .fv-body{position:relative;z-index:7;padding:10px 16px 0;text-align:center}
-.fv-eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;font-family:var(--en);font-weight:600;font-size:clamp(13px,4.2vw,23px);letter-spacing:.06em;line-height:1.4;color:var(--brown);white-space:nowrap}
-.fv-eyebrow .dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(208,18,28,.18);animation:pulse 1.8s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(208,18,28,0)}}
-.fv-title{margin-top:10px;font-family:var(--serif);font-weight:600;font-size:clamp(33px,9.6vw,54px);line-height:1.35;letter-spacing:.03em}
+.fv-title{font-family:var(--serif);font-weight:600;font-size:clamp(35px,10.8vw,66px);line-height:1.35;letter-spacing:.03em}
 .fv-title span{background:linear-gradient(transparent 70%,rgba(208,18,28,.22) 70%)}
 
 /* 動くイラスト */
@@ -85,7 +82,7 @@ a{color:inherit;text-decoration:none}
 .twinkle i{position:absolute;width:var(--s);height:var(--s);background:var(--c,#fff);clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%);opacity:0;animation:tw 3s ease-in-out infinite}
 @keyframes tw{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
 .vs-in{position:relative;z-index:2}
-.vs-soy{font-family:var(--en);font-weight:600;font-size:clamp(14px,4.9vw,28px);letter-spacing:.06em;color:var(--gold-l);white-space:nowrap}
+.vs-soy{font-family:var(--en);font-weight:600;font-size:clamp(28px,9.2vw,52px);line-height:1.15;letter-spacing:.04em;color:var(--gold-l);white-space:nowrap}
 .vs-title{margin-top:4px;font-weight:700;font-size:clamp(40px,12vw,64px);line-height:1.2;letter-spacing:.08em;padding-left:.08em}
 .vs-dl{display:inline-block;margin-top:12px;background:#fff;color:var(--brown);font-weight:700;font-size:clamp(15px,4.4vw,20px);line-height:1.3;white-space:nowrap;border-radius:999px;padding:7px 24px}
 .vs-dl b{font-family:var(--en);font-weight:600;font-size:1.65em;line-height:1;color:var(--red);margin:0 .1em}
@@ -231,7 +228,7 @@ a{color:inherit;text-decoration:none}
   .wrap{padding-bottom:0}
 }
 @media (prefers-reduced-motion:reduce){
-  .cta::before,.twinkle i,.gbox,.env,.bob,.bob2,.wiggle,.fv-img img,.fv-eyebrow .dot{animation:none}
+  .cta::before,.twinkle i,.gbox,.env,.bob,.bob2,.wiggle,.fv-img img{animation:none}
   .twinkle,.burst{display:none}
 }
 </style>
@@ -243,7 +240,6 @@ a{color:inherit;text-decoration:none}
   <header class="fv" id="fv">
     <div class="fv-img"><img src="img/fv2.jpg" alt="笑顔の澤井珈琲スタッフ" width="1800" height="850"></div>
     <div class="fv-body">
-      <p class="fv-eyebrow"><span class="dot"></span><span>RAKUTEN SHOP OF THE YEAR 2026</span></p>
       <h1 class="fv-title">澤井珈琲に、<br><span>あなたの1票</span>を。</h1>
       <img class="chara c-fv bob" src="img/c_trio.png" alt="澤井珈琲の店長と豆田・豆太" width="672" height="550">
     </div>
@@ -253,7 +249,7 @@ a{color:inherit;text-decoration:none}
   <section class="vote-stage" id="stage">
     <div class="twinkle" data-twinkle="16"></div>
     <div class="vs-in">
-      <p class="vs-soy">RAKUTEN SHOP OF THE YEAR 2026</p>
+      <p class="vs-soy">RAKUTEN SHOP OF<br>THE YEAR 2026</p>
       <p class="vs-title">投票受付中</p>
       <p class="vs-dl">投票は<b>11.30</b>(月)09:59まで</p>
       <div class="vs-pt">
