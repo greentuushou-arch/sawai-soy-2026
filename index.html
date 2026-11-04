@@ -29,6 +29,34 @@ img{display:block;width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 .wrap{position:relative;max-width:750px;margin:0 auto;background:#fff;overflow:hidden;padding-bottom:88px;box-shadow:0 0 40px rgba(0,0,0,.45)}
 
+/* FV（写真から入る） */
+.fv{position:relative;background:var(--paper)}
+.fv-img{position:relative;aspect-ratio:1800/850;overflow:hidden}
+.fv-img img{height:100%;object-fit:cover;animation:fvzoom 9s ease-out forwards}
+.fv-img::after{content:"";position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(transparent,var(--paper))}
+@keyframes fvzoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.fv-body{position:relative;padding:12px 20px 30px}
+.fv-eyebrow{display:flex;align-items:flex-start;gap:10px;font-family:var(--en);font-weight:500;font-size:12px;letter-spacing:.16em;line-height:1.6;color:var(--brown-2)}
+.fv-eyebrow .dot{flex:none;width:8px;height:8px;margin-top:5px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(208,18,28,.18);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(208,18,28,0)}}
+.fv-title{margin-top:10px;font-family:var(--serif);font-weight:600;font-size:clamp(33px,9.6vw,54px);line-height:1.35;letter-spacing:.03em}
+.fv-title span{background:linear-gradient(transparent 70%,rgba(208,18,28,.22) 70%)}
+
+/* 動くイラスト */
+.chara{position:absolute;z-index:6;height:auto;pointer-events:none}
+.bob{animation:bob 3.2s ease-in-out infinite}
+.bob2{animation:bob 3.8s ease-in-out .6s infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(-2deg)}}
+.wiggle{animation:wiggle 2.8s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes wiggle{0%,70%,100%{transform:rotate(0)}76%{transform:rotate(-6deg)}84%{transform:rotate(5deg)}92%{transform:rotate(-2deg)}}
+.c-fv{width:112px;right:8px;top:6px}
+.c-cheer{width:72px;left:max(6px,calc(50% - 232px));bottom:26px}
+.c-point{width:84px;right:-4px;top:-74px}
+.c-bow{width:52px;right:8px;top:-8px}
+.c-pour{width:112px;right:6px;top:8px}
+.c-wink{width:62px;right:8px;top:-62px}
+.last .c-trio{position:static;display:block;width:170px;margin:0 auto 10px}
+
 /* 幕の上飾り（FVの画像と同じ、丸いひだ） */
 .valance{height:30px;background:
   radial-gradient(circle at 25% 0,#e8671f 24px,transparent 25px) 0 0/100px 30px,
@@ -107,9 +135,10 @@ a{color:inherit;text-decoration:none}
 .gap{height:24px}
 .linkimg{display:block;transition:opacity .2s}
 .linkimg:hover{opacity:.88}
-.block{padding:42px 0 38px}
+.block{position:relative;padding:42px 0 38px}
 .block.cream{background:var(--paper)}
 .block .head{padding:0 14px 22px}
+.block.cream .head{padding-top:56px}
 
 /* 店長の手紙 */
 .memo-sec{background:var(--paper);padding:48px 16px 52px}
@@ -128,7 +157,7 @@ a{color:inherit;text-decoration:none}
 .point-head{background:linear-gradient(180deg,#f6cf63 0%,#e3ab2c 100%);padding:18px 12px}
 
 /* 企画のお礼→オールスターズ30 */
-.thanks{padding:44px 22px 10px;text-align:center}
+.thanks{position:relative;padding:44px 22px 10px;text-align:center}
 .thanks .kicker{font-family:var(--en);font-weight:500;font-size:14px;letter-spacing:.24em;color:var(--red)}
 .thanks .quote{margin-top:12px;font-family:var(--serif);font-weight:600;font-size:clamp(22px,6vw,30px);line-height:1.8;letter-spacing:.05em}
 .thanks .quote em{font-style:normal;color:var(--red)}
@@ -147,13 +176,13 @@ a{color:inherit;text-decoration:none}
 .cp-note{margin:14px 16px 20px;text-align:center;font-size:15px;color:var(--brown-2)}
 
 /* スタッフ */
-.staff-text{padding:26px 22px 28px;text-align:center}
+.staff-text{position:relative;padding:26px 22px 28px;text-align:center}
 .staff-text p{margin-top:16px}
 .staff-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px}
 .staff-grid figure{margin:0;overflow:hidden;border-radius:4px}
 .staff-grid img{height:100%;object-fit:cover}
 .staff-grid .wide{grid-column:1/3;aspect-ratio:16/10}
-.staff-grid .sq{aspect-ratio:1/1}
+.staff-grid .sq{aspect-ratio:8/7}
 
 /* 締め（スタッフ3人の写真） */
 .last{position:relative;color:#fff;text-align:center;overflow:hidden;padding:84px 20px 76px}
@@ -180,6 +209,15 @@ a{color:inherit;text-decoration:none}
 @media (min-width:768px){
   .vs-pt{margin:22px 56px 0}
   .msg{padding:56px 56px 44px}
+  .fv-body{padding:14px 44px 36px}
+  .fv-eyebrow{font-size:14px}
+  .c-fv{width:170px;right:40px;top:-16px}
+  .c-cheer{width:108px}
+  .c-point{width:112px;right:-10px;top:-92px}
+  .c-bow{width:86px;right:40px}
+  .c-pour{width:150px;right:30px;top:14px}
+  .block.cream .head{padding-top:30px}
+  .c-wink{width:100px;right:40px;top:-30px}
   .memo-sec{padding:56px 40px 60px}
   .memo{padding:48px 40px 36px}
   .copies{padding:6px 40px 0}
@@ -189,7 +227,7 @@ a{color:inherit;text-decoration:none}
   .wrap{padding-bottom:0}
 }
 @media (prefers-reduced-motion:reduce){
-  .cta::before,.twinkle i,.gbox,.env{animation:none}
+  .cta::before,.twinkle i,.gbox,.env,.bob,.bob2,.wiggle,.fv-img img,.fv-eyebrow .dot{animation:none}
   .twinkle,.burst{display:none}
 }
 </style>
@@ -198,8 +236,13 @@ a{color:inherit;text-decoration:none}
 <div class="wrap">
 
   <!-- ===== FV ===== -->
-  <header id="fv">
-    <h1><img src="img/hero.jpg" alt="楽天ショップ・オブ・ザ・イヤー2026 今年も、どうか、よろしくお願いいたします。あなたの温かい“ひと言”で笑顔がたくさん広がります。" width="1200" height="675"></h1>
+  <header class="fv" id="fv">
+    <div class="fv-img"><img src="img/fv2.jpg" alt="笑顔の澤井珈琲スタッフ" width="1800" height="850"></div>
+    <div class="fv-body">
+      <p class="fv-eyebrow"><span class="dot"></span><span>RAKUTEN SHOP OF<br>THE YEAR 2026</span></p>
+      <h1 class="fv-title">澤井珈琲に、<br><span>あなたの1票</span>を。</h1>
+      <img class="chara c-fv bob" src="img/c_trio.png" alt="澤井珈琲の店長と豆田・豆太" width="672" height="550">
+    </div>
   </header>
 
   <!-- ===== 投票受付中（投票箱） ===== -->
@@ -216,6 +259,7 @@ a{color:inherit;text-decoration:none}
         <p class="nt">※詳細は楽天市場の投票ページをご確認ください</p>
       </div>
       <div class="stage" aria-hidden="true">
+        <img class="chara c-cheer wiggle" src="img/c_cheer.png" alt="" width="301" height="493">
         <div class="burst" data-burst="16"></div>
         <div class="slotwin"><div class="env"><svg viewBox="0 0 58 40"><rect x="1" y="1" width="56" height="38" rx="3" fill="#ffffff" stroke="#e2d6c4" stroke-width="1.5"/><path d="M2 3 L29 23 L56 3" fill="none" stroke="#e2d6c4" stroke-width="1.5"/><circle cx="29" cy="23" r="7" fill="#d0121c"/><path d="M29 27.2s-3.2-2-4-3.8c-.6-1.5.3-3 1.8-3 .9 0 1.5.5 2.2 1.3.7-.8 1.3-1.3 2.2-1.3 1.5 0 2.4 1.5 1.8 3-.8 1.8-4 3.8-4 3.8z" fill="#fff"/></svg></div></div>
         <svg class="gbox" viewBox="0 0 260 230">
@@ -246,6 +290,8 @@ a{color:inherit;text-decoration:none}
     </div>
   </section>
 
+  <img class="full" src="img/hero.jpg" alt="楽天ショップ・オブ・ザ・イヤー2026 今年も、どうか、よろしくお願いいたします。あなたの温かい“ひと言”で笑顔がたくさん広がります。" width="1200" height="675" loading="lazy">
+
   <!-- ===== メッセージ ===== -->
   <section class="msg">
     <h2 class="ttl">澤井珈琲は<br><em>お客様と一緒に</em><br>歩んできました。</h2>
@@ -271,6 +317,7 @@ a{color:inherit;text-decoration:none}
   <section class="memo-sec">
     <h2 class="ttl">店長サワイからの<br><em>お願い</em></h2>
     <div class="memo">
+      <img class="chara c-point wiggle" src="img/c_point.png" alt="" width="365" height="384" loading="lazy">
       <div class="memo-body">
         <p>こんにちは。<br>澤井珈琲Beans＆Leafの店長のサワイでございます。</p>
         <p>急に冷え込みが増してきましたが、<br>今日のカフェタイムをいかがお楽しみでしょうか。</p>
@@ -293,6 +340,7 @@ a{color:inherit;text-decoration:none}
   <!-- ===== 今年の企画 → オールスターズ30 ===== -->
   <a class="linkimg" data-vote href="#"><img src="img/campaign.jpg" alt="2026年もがんばりました。あなたのひと言で、もっと頑張れます！！投票はこちらから" width="1200" height="2067" loading="lazy"></a>
   <section class="thanks">
+    <img class="chara c-bow bob2" src="img/c_bow.png" alt="" width="269" height="409" loading="lazy">
     <p class="kicker">THANK YOU</p>
     <p class="quote">今年は皆様のお声をヒントに、<br>新しい企画をたくさん<br><em>行うことができました。</em></p>
   </section>
@@ -305,6 +353,7 @@ a{color:inherit;text-decoration:none}
 
   <!-- ===== ひと言 ===== -->
   <section class="block cream">
+    <img class="chara c-pour bob2" src="img/c_pour.png" alt="" width="385" height="269" loading="lazy">
     <p class="head">どんな応援メッセージに<br>しようかな？</p>
     <img src="img/kangei.jpg" alt="どんな“ひと言”でも大歓迎です！！" width="720" height="92" loading="lazy">
     <div class="gap"></div>
@@ -326,15 +375,16 @@ a{color:inherit;text-decoration:none}
     <p class="head">あなたの応援は、<br><em>絶対に</em>僕らに届きます</p>
     <img src="img/staff.jpg" alt="「美味しかったよ！」って言ってもらえるたびに私たちの力になってきました" width="1200" height="675" loading="lazy">
     <div class="staff-text">
+      <img class="chara c-wink bob" src="img/c_wink.png" alt="" width="303" height="383" loading="lazy">
       <h2 class="ttl">澤井珈琲の一杯には、<br>たくさんの<em>“ありがとう”</em>が<br>詰まっています。</h2>
       <p>豆を焼く人、袋に詰める人、商品を届ける人。</p>
       <p>一人ひとりが「お客様においしいと<br>言ってもらえる瞬間」を目標に、<br>日々心を込めています。</p>
     </div>
     <div class="staff-grid">
-      <figure class="wide"><img src="img/staff3.jpg" alt="豆の棚の前のスタッフ" loading="lazy"></figure>
-      <figure class="sq"><img src="img/staff2.jpg" alt="事務所のスタッフ" loading="lazy"></figure>
-      <figure class="sq"><img src="img/staff1.jpg" alt="工場のスタッフ" loading="lazy"></figure>
-      <figure class="wide"><img src="img/staff4.jpg" alt="工場のスタッフ" loading="lazy"></figure>
+      <figure class="wide"><img src="img/staff3b.jpg" alt="豆の棚の前のスタッフ" loading="lazy"></figure>
+      <figure class="sq"><img src="img/staff2b.jpg" alt="事務所のスタッフ" loading="lazy"></figure>
+      <figure class="sq"><img src="img/staff1b.jpg" alt="工場のスタッフ" loading="lazy"></figure>
+      <figure class="wide"><img src="img/staff4b.jpg" alt="工場のスタッフ" loading="lazy"></figure>
     </div>
   </section>
 
@@ -343,6 +393,7 @@ a{color:inherit;text-decoration:none}
   <!-- ===== 締め ===== -->
   <section class="last" id="last">
     <div class="bg"><img src="img/trio.jpg" alt="" loading="lazy"></div>
+    <img class="chara c-trio bob" src="img/c_trio.png" alt="澤井珈琲の店長と豆田・豆太" width="672" height="550" loading="lazy">
     <h2>今年も、どうか、<br>よろしくお願いいたします。</h2>
     <a class="cta gold" data-vote href="#">澤井珈琲に投票する</a>
     <p class="note">投票は11月30日（月）09:59まで<br>投票すると最大10,000ポイント！<br>合計10万名様に当たる！</p>
