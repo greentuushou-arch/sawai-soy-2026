@@ -7,7 +7,7 @@
 <meta name="description" content="楽天市場「ショップ・オブ・ザ・イヤー2026」の投票が始まりました。澤井珈琲Beans＆Leafに、あなたの1票と応援のひと言をお寄せください。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Noto+Serif+JP:wght@600;700&family=Klee+One:wght@400;600&family=Jost:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Noto+Serif+JP:wght@600;700&family=Jost:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   /* 澤井珈琲の赤をベースに、金と豆の茶色 */
@@ -139,16 +139,13 @@ a{color:inherit;text-decoration:none}
 .memo-sec .ttl{margin-bottom:34px}
 .memo{position:relative;background:#fffdf8;padding:44px 22px 32px;border:1px solid #efe3cd;border-radius:2px}
 .memo::before{content:"";position:absolute;top:-14px;left:50%;width:120px;height:28px;margin-left:-60px;background:rgba(208,18,28,.18)}
-.memo-body{font-family:"Klee One",var(--sans);font-size:16.5px;line-height:2.25em;color:#3a2a22;letter-spacing:.02em;
+.memo-body{font-size:16.5px;line-height:2.25em;color:#3a2a22;letter-spacing:.02em;
   background-image:repeating-linear-gradient(transparent 0,transparent calc(2.25em - 1px),#e2d6c4 calc(2.25em - 1px),#e2d6c4 2.25em);
   background-position:0 -2px}
 .memo-body p{margin:0 0 2.25em}
 .memo-body p:last-child{margin-bottom:0}
 .memo-body u{text-decoration:none;background:linear-gradient(transparent 62%,rgba(208,18,28,.2) 62%)}
-.memo-sign{font-family:"Klee One",var(--sans);text-align:right;margin-top:16px;font-size:17px;font-weight:600}
-
-/* ポイント */
-.point-head{background:linear-gradient(180deg,#f6cf63 0%,#e3ab2c 100%);padding:18px 12px}
+.memo-sign{text-align:right;margin-top:16px;font-size:17px;font-weight:700}
 
 /* 企画のお礼→オールスターズ30 */
 .thanks{position:relative;padding:44px 22px 10px;text-align:center}
@@ -169,7 +166,7 @@ a{color:inherit;text-decoration:none}
 .voices{display:grid;grid-template-columns:1fr;gap:20px;margin-top:30px;padding:0 16px}
 .voice{position:relative;background:#fff;border-radius:18px;padding:22px 20px 16px;display:flex;flex-direction:column;justify-content:space-between;gap:12px}
 .voice::after{content:"";position:absolute;left:28px;bottom:-10px;width:20px;height:20px;background:#fff;transform:rotate(45deg);border-radius:3px}
-.voice p{font-family:"Klee One",var(--sans);font-size:17px;line-height:1.8;font-weight:600}
+.voice p{font-size:17px;line-height:1.8;font-weight:700}
 .voice:nth-child(3n+1) p{color:#b5121b}
 .voice:nth-child(3n+2) p{color:#2a5d8f}
 .voice:nth-child(3n) p{color:#3e6b3a}
@@ -208,6 +205,10 @@ a{color:inherit;text-decoration:none}
 .fixed.on{transform:none}
 .fixed .cta{min-height:58px;max-width:none}
 
+@media (max-width:767px){
+  .memo{padding:44px 14px 32px}
+  .memo-body{font-size:16px;letter-spacing:0}
+}
 @media (min-width:768px){
   .vs-pt{margin:22px 56px 0}
   .msg{padding:56px 56px 44px}
@@ -331,7 +332,6 @@ a{color:inherit;text-decoration:none}
 
   <!-- ===== ポイント ===== -->
   <div class="valance" aria-hidden="true"></div>
-  <p class="point-head head">最大<em>10,000</em>ポイント！<br>合計<em>10</em>万名様に当たる！</p>
   <a class="linkimg" data-vote href="#"><img src="img/point.jpg" alt="さらに！！投票するだけで最大10,000ポイントが100,000名様に当たる！投票はこちらから" width="1200" height="1083" loading="lazy"></a>
   <div class="gap"></div>
 
