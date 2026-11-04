@@ -32,9 +32,7 @@ a{color:inherit;text-decoration:none}
 /* FV（写真から入る） */
 .fv{position:relative;background:var(--paper)}
 .fv-img{position:relative;aspect-ratio:1289/632;overflow:hidden}
-.fv-img img{height:100%;object-fit:cover;animation:fvzoom 9s ease-out forwards}
-.fv-img::after{content:"";position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(transparent,var(--paper))}
-@keyframes fvzoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.fv-img img{height:100%;object-fit:cover}
 .fv-body{position:relative;z-index:7;padding:10px 16px 0;text-align:center}
 .fv-title{font-family:var(--serif);font-weight:600;font-size:clamp(35px,10.8vw,66px);line-height:1.35;letter-spacing:.03em}
 .fv-title span{background:linear-gradient(transparent 70%,rgba(208,18,28,.22) 70%)}
@@ -228,7 +226,7 @@ a{color:inherit;text-decoration:none}
   .wrap{padding-bottom:0}
 }
 @media (prefers-reduced-motion:reduce){
-  .cta::before,.twinkle i,.gbox,.env,.bob,.bob2,.wiggle,.fv-img img{animation:none}
+  .cta::before,.twinkle i,.gbox,.env,.bob,.bob2,.wiggle{animation:none}
   .twinkle,.burst{display:none}
 }
 </style>
