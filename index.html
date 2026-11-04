@@ -7,7 +7,7 @@
 <meta name="description" content="楽天市場「ショップ・オブ・ザ・イヤー2026」の投票が始まりました。澤井珈琲Beans＆Leafに、あなたの1票と応援のひと言をお寄せください。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Noto+Serif+JP:wght@600;700&family=Jost:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Noto+Serif+JP:wght@600;700&family=Klee+One:wght@400;600&family=Jost:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   /* 澤井珈琲の赤をベースに、金と豆の茶色 */
@@ -111,6 +111,19 @@ a{color:inherit;text-decoration:none}
 .block.cream{background:var(--paper)}
 .block .head{padding:0 14px 22px}
 
+/* 店長の手紙 */
+.memo-sec{background:var(--paper);padding:48px 16px 52px}
+.memo-sec .ttl{margin-bottom:34px}
+.memo{position:relative;background:#fffdf8;padding:44px 22px 32px;border:1px solid #efe3cd;border-radius:2px}
+.memo::before{content:"";position:absolute;top:-14px;left:50%;width:120px;height:28px;margin-left:-60px;background:rgba(208,18,28,.18)}
+.memo-body{font-family:"Klee One",var(--sans);font-size:16.5px;line-height:2.25em;color:#3a2a22;letter-spacing:.02em;
+  background-image:repeating-linear-gradient(transparent 0,transparent calc(2.25em - 1px),#e2d6c4 calc(2.25em - 1px),#e2d6c4 2.25em);
+  background-position:0 -2px}
+.memo-body p{margin:0 0 2.25em}
+.memo-body p:last-child{margin-bottom:0}
+.memo-body u{text-decoration:none;background:linear-gradient(transparent 62%,rgba(208,18,28,.2) 62%)}
+.memo-sign{font-family:"Klee One",var(--sans);text-align:right;margin-top:16px;font-size:17px;font-weight:600}
+
 /* ポイント */
 .point-head{background:linear-gradient(180deg,#f6cf63 0%,#e3ab2c 100%);padding:18px 12px}
 
@@ -167,6 +180,8 @@ a{color:inherit;text-decoration:none}
 @media (min-width:768px){
   .vs-pt{margin:22px 56px 0}
   .msg{padding:56px 56px 44px}
+  .memo-sec{padding:56px 40px 60px}
+  .memo{padding:48px 40px 36px}
   .copies{padding:6px 40px 0}
   .staff-grid{padding:0 40px}
   .info{padding:48px 40px 36px}
@@ -251,6 +266,23 @@ a{color:inherit;text-decoration:none}
   <div class="gap"></div>
   <img class="full" src="img/hitokoto.jpg" alt="澤井珈琲はあなたのひと言（応援）が欲しいんです！！" width="1200" height="750" loading="lazy">
   <div class="gap"></div>
+
+  <!-- ===== 店長の手紙 ===== -->
+  <section class="memo-sec">
+    <h2 class="ttl">店長サワイからの<br><em>お願い</em></h2>
+    <div class="memo">
+      <div class="memo-body">
+        <p>こんにちは。<br>澤井珈琲Beans＆Leafの店長のサワイでございます。</p>
+        <p>急に冷え込みが増してきましたが、<br>今日のカフェタイムをいかがお楽しみでしょうか。</p>
+        <p>11月1日から、年に一度の楽天市場最大のイベント<br>「楽天ショップ・オブ・ザ・イヤー」の<br>投票が始まりました。</p>
+        <p>いつも「美味しかったよ」「次回も澤井珈琲さんで」と、<br>温かく応援してくださるあなた様に、<br>今年もお願いさせて頂きたいのです。</p>
+        <p>どうか当店に、投票をして頂けないでしょうか？<br><u>どんな“ひと言”でも構いません！</u></p>
+        <p>もちろん料金は1円もかかりませんし、<br>投票するだけで、最大10,000ポイント、<br>合計10万名様に当たる特典もございます。<br>何店舗でも投票することができます。</p>
+        <p>あなた様からの“ひと言”が、<br>スタッフ一同の何よりの励みです。<br>どうか、よろしくお願いいたします。</p>
+      </div>
+      <p class="memo-sign">澤井珈琲Beans＆Leaf 店長　サワイ</p>
+    </div>
+  </section>
 
   <!-- ===== ポイント ===== -->
   <div class="valance" aria-hidden="true"></div>
